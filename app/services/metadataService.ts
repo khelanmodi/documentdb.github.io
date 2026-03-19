@@ -9,9 +9,9 @@ import strip from "strip-markdown";
 export const sanitizeMarkdown = async (markdown: string | undefined): Promise<string> => {
   if (!markdown) return '';
   
-  let processor = remark().use(strip).process(markdown);
+  const processor = remark().use(strip).process(markdown);
   
-  let output: string = String(await processor);
+  const output: string = String(await processor);
   
   return output.trim();
 };
@@ -52,10 +52,8 @@ const getBaseKeywords = (): string[] => [
   'open source',
   'NoSQL',
   'database',
-  'MongoDB compatible',
   'PostgreSQL',
-  'MQL',
-  'MongoDB Query Language',
+  'document data API',
   'JSON documents',
   'scalable database',
   'distributed database',
